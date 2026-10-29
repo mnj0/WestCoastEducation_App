@@ -6,5 +6,5 @@ namespace WestCoastEducation_App.ViewModels;
 public partial class ViewModelBase : ObservableObject
 {
     [ObservableProperty]
-    public partial string PageTitle { get; set; } = "";
+    public partial string FönsterVyNamn { get; set; } = "";
 }
