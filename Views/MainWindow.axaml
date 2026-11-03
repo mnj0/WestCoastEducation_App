@@ -9,10 +9,21 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="AdminApp">
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
+    <Grid ColumnDefinitions="150,*,150" Height="60" VerticalAlignment="Top">
+
+    <!-- Left: logo -->
+    <Image HorizontalAlignment="Left" Grid.Column="0"
+           Source="avares://WestCoastEducation_App/Assets/avalonia-logo.ico"
+           Margin="8" />
+
+    <!-- Middle: navigation buttons -->
+    <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="8" HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+        <Button Content="Courses" />
+        <Button Content="Students" />
+        <Button Content="Teachers" />
+    </StackPanel>
+
+    </Grid>
 
 </Window>
