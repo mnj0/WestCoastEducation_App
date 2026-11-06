@@ -7,21 +7,15 @@ namespace WestCoastEducation_App.Factories;
 
 public class PageViewFactory : IPageViewFactory
 {
-    public ViewModelBase LoadPageViewModel(PageViewEnum page)
+    private readonly Func<PageViewEnum, ViewModelBase> _pageFactory;
+    public PageViewFactory(Func<PageViewEnum, ViewModelBase> pageFactory)
     {
-        return page switch
-        {
-            PageViewEnum.Home => new HomeViewModel(),
-            _ => throw new InvalidOperationException("Det fanns inte det du ville ha"),
-        };
+        _pageFactory = pageFactory;
     }
 
-    /*public ViewModelBase LoadPageViewModel(PageViewEnum page, string itemNumber)
+    public ViewModelBase LoadPageViewModel(PageViewEnum page)
     {
-        return page switch
-        {
-            PageViewsEnum.EditProduct => new EditProductViewModel(new ProductServices(), itemNumber),
-            _ => throw new InvalidOperationException("Det fanns inte det du ville ha")
-        };
-    }*/
+        return _pageFactory.Invoke(page);
+    }
+
 }

@@ -4,7 +4,7 @@ using Avalonia.Markup.Xaml;
 
 namespace WestCoastEducation_App.Views;
 
-public partial class HomeView : Window
+public partial class HomeView : UserControl
 {
     public HomeView()
     {
