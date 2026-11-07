@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="WestCoastEducation_App.Views.HomeView">
-  <StackPanel>
-    <TextBlock Classes="pageTitle" Text="Välkommen till RunStore"/>
-  </StackPanel>
+  <Panel>
+    <TextBlock FontSize="40" Margin=" 0 0 0 80" Classes="pageTitle" Text="Du är inne i admin appen" HorizontalAlignment="Center" VerticalAlignment="Center" />
+  </Panel>
 </UserControl>

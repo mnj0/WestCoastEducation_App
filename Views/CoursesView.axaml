@@ -18,21 +18,21 @@
 
       <Border BorderBrush="White" BorderThickness="0 0 0 1" Padding="0 50 0 5">
         <Grid ColumnDefinitions="100,200,200,*,Auto,Auto" ShowGridLines="False">
-          <Label Content="Kundnr" />
-          <Label Grid.Column="1" Content="Förnamn" />
-          <Label Grid.Column="2" Content="Efternamn" />
-          <Label Grid.Column="3" Content="E-Post" />
-          <Label Grid.Column="4"/>
-          <Label Grid.Column="4"/>
+          <Label Content="Kurs" />
+          <Label Grid.Column="1" Content="Antal Veckor" />
+          <Label Grid.Column="2" Content="Start Datum" />
+          <Label Grid.Column="3" Content="Slut Datum" />
+          <Label Grid.Column="4" Content="Typ Av Kurs" />
         </Grid>
       </Border>
       <ItemsControl ItemsSource="">
         <ItemsControl.ItemTemplate>
           <DataTemplate>
             <Grid ColumnDefinitions="100,200,200,*,Auto,Auto" ShowGridLines="False">
-              <Label Content="" />
+              <Label Content="{Binding }" />
               <Label Grid.Column="1" Content="" />
               <Label Grid.Column="2" Content="" />
+              <Label Grid.Column="3" Content="" />
               <Label Grid.Column="3" Content="" />
             </Grid>
           </DataTemplate>
