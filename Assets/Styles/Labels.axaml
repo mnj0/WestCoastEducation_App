@@ -1,0 +1,41 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Styles.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="/Assets/Resources/Color.axaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Styles.Resources>
+
+  <Design.PreviewWith>
+    <Border Background="{DynamicResource MainWindowBackground}" Padding="20">
+      <StackPanel>
+        <Label Classes="header" Content="Kurs" />
+        <Label Classes="cell title" Content="C# Grund" />
+        <Label Classes="cell" Content="12 veckor" />
+      </StackPanel>
+    </Border>
+  </Design.PreviewWith>
+
+  <!-- Data: pale pink, readable on the dark background -->
+  <Style Selector="Label.cell">
+    <Setter Property="Foreground" Value="{DynamicResource MainBackground}" />
+    <Setter Property="FontSize" Value="15" />
+    <Setter Property="Padding" Value="8,6" />
+  </Style>
+
+  <!-- Course name is the one thing that stands out -->
+  <Style Selector="Label.cell.title">
+    <Setter Property="FontWeight" Value="SemiBold" />
+  </Style>
+
+  <!-- Header: quieter than the data -->
+  <Style Selector="Label.header">
+    <Setter Property="Foreground" Value="{DynamicResource MainHover}" />
+    <Setter Property="FontSize" Value="13" />
+    <Setter Property="FontWeight" Value="SemiBold" />
+    <Setter Property="Padding" Value="8,6" />
+  </Style>
+</Styles>

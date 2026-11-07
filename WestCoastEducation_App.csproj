@@ -13,6 +13,8 @@
   <ItemGroup>
     <AvaloniaXaml Remove="Assets\Resources\Color.axaml" />
     <AvaloniaXaml Remove="Assets\Styles\Buttons.axaml" />
+    <AvaloniaXaml Remove="Assets\Styles\Labels.axaml" />
+    <AvaloniaXaml Remove="Assets\Styles\TextBlocks.axaml" />
   </ItemGroup>
 
   <ItemGroup>

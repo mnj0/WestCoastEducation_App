@@ -14,26 +14,26 @@
   </Design.DataContext>
 
     <StackPanel>
-      <TextBlock Classes="pageTitle" Text="{Binding PageTitle}"/>
+      <TextBlock Classes="pageTitle" Text=""/>
 
       <Border BorderBrush="White" BorderThickness="0 0 0 1" Padding="0 50 0 5">
-        <Grid ColumnDefinitions="100,200,200,*,Auto,Auto" ShowGridLines="False">
-          <Label Content="Kurs" />
-          <Label Grid.Column="1" Content="Antal Veckor" />
-          <Label Grid.Column="2" Content="Start Datum" />
-          <Label Grid.Column="3" Content="Slut Datum" />
-          <Label Grid.Column="4" Content="Typ Av Kurs" />
-        </Grid>
+        <Grid ColumnDefinitions="200,120,140,140,160">
+          <Label Classes="header" Content="Kurs" />
+          <Label Classes="header" Grid.Column="1" Content="Antal Veckor" />
+          <Label Classes="header" Grid.Column="2" Content="Start Datum" />
+          <Label Classes="header" Grid.Column="3" Content="Slut Datum" />
+          <Label Classes="header" Grid.Column="4" Content="Typ Av Kurs" />
+      </Grid>
       </Border>
       <ItemsControl ItemsSource="{Binding Courses}">
         <ItemsControl.ItemTemplate>
           <DataTemplate>
-            <Grid ColumnDefinitions="100,200,200,*,Auto,Auto" ShowGridLines="False">
-              <Label Content="{Binding Titel}" />
-              <Label Grid.Column="1" Content="{Binding HowManyWeeks}" />
-              <Label Grid.Column="2" Content="{Binding StartDate}" />
-              <Label Grid.Column="3" Content="{Binding EndDate}" />
-              <Label Grid.Column="4" Content="{Binding TypeOfCourse}" />
+            <Grid ColumnDefinitions="200,120,140,140,160">
+              <Label Classes="cell title" Content="{Binding Titel}" />
+              <Label Classes="cell" Grid.Column="1" Content="{Binding HowManyWeeks}" />
+              <Label Classes="cell" Grid.Column="2" Content="{Binding StartDate}" />
+              <Label Classes="cell" Grid.Column="3" Content="{Binding EndDate}" />
+              <Label Classes="cell" Grid.Column="4" Content="{Binding TypeOfCourse}" />
             </Grid>
           </DataTemplate>
         </ItemsControl.ItemTemplate>
