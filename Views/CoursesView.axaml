@@ -25,15 +25,15 @@
           <Label Grid.Column="4" Content="Typ Av Kurs" />
         </Grid>
       </Border>
-      <ItemsControl ItemsSource="">
+      <ItemsControl ItemsSource="{Binding Courses}">
         <ItemsControl.ItemTemplate>
           <DataTemplate>
             <Grid ColumnDefinitions="100,200,200,*,Auto,Auto" ShowGridLines="False">
-              <Label Content="{Binding }" />
-              <Label Grid.Column="1" Content="" />
-              <Label Grid.Column="2" Content="" />
-              <Label Grid.Column="3" Content="" />
-              <Label Grid.Column="3" Content="" />
+              <Label Content="{Binding Titel}" />
+              <Label Grid.Column="1" Content="{Binding HowManyWeeks}" />
+              <Label Grid.Column="2" Content="{Binding StartDate}" />
+              <Label Grid.Column="3" Content="{Binding EndDate}" />
+              <Label Grid.Column="4" Content="{Binding TypeOfCourse}" />
             </Grid>
           </DataTemplate>
         </ItemsControl.ItemTemplate>

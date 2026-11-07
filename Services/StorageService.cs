@@ -13,7 +13,8 @@ public class Storage<T> : IStorage<T> where T : class
     {
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
         WriteIndented = true,
-        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+        PropertyNameCaseInsensitive = true
     };
 
     public List<T> Read(string path)

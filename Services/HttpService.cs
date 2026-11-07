@@ -14,14 +14,14 @@ namespace WestCoastEducation_App.Services;
 public class HttpService<T> : IDisposable, IHttpService<T> where T : class
 {
     private readonly HttpClient _httpClient;
-    private readonly string _baseUrl = string.Empty;
+    private readonly string _baseUrl = "https://westcoasteducation-bc65.restdb.io/rest";
     private readonly JsonSerializerOptions _options = new()
     {
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
         Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
         WriteIndented = true
     };
-
+    
     public HttpService()
     {
         var config = new ConfigurationBuilder()
@@ -36,7 +36,7 @@ public class HttpService<T> : IDisposable, IHttpService<T> where T : class
             BaseAddress = new Uri(_baseUrl)
         };
         _httpClient.DefaultRequestHeaders.Add("Cache-Control", "none");
-        _httpClient.DefaultRequestHeaders.Add("x-apikey", "0f1861a8c60958f6eff604ccc8cda205e6a1c");
+        _httpClient.DefaultRequestHeaders.Add("x-apikey", apiKey);
     }
 
     public async Task Delete(string resource, string id)
@@ -66,6 +66,7 @@ public class HttpService<T> : IDisposable, IHttpService<T> where T : class
         var result = await response.Content.ReadAsStringAsync();
 
         var list = JsonSerializer.Deserialize<List<T>>(result, _options) ?? [];
+        Console.WriteLine($"{response.StatusCode}: {result}");
         return list;
     }
 

@@ -1,10 +1,10 @@
 using System;
 using WestCoastEducation_App.Factories;
 using WestCoastEducation_App.Interfaces;
-//using WestCoastEducation_App.Services;
 using WestCoastEducation_App.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using WestCoastEducation_App.Enums;
+using WestCoastEducation_App.Services;
 
 namespace WestCoastEducation_App.Helpers;
 
@@ -14,6 +14,7 @@ public static class ServiceCollectionExtensions
     {
         collection.AddSingleton<MainWindowViewModel>();
         collection.AddSingleton<PageViewFactory>();
+        collection.AddSingleton<ICourseService, CourseService>();
         collection.AddTransient<HomeViewModel>();
         collection.AddTransient<CoursesViewModel>();
         
