@@ -21,27 +21,52 @@
         Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).GoToAddCourseCommand}" />
 
       <Border BorderBrush="White" BorderThickness="0 0 0 1" Padding="0 50 0 5">
-        <Grid ColumnDefinitions="200,120,140,140,160">
-          <Label Classes="header" Content="Kurs" />
-          <Label Classes="header" Grid.Column="1" Content="Antal Veckor" />
-          <Label Classes="header" Grid.Column="2" Content="Start Datum" />
-          <Label Classes="header" Grid.Column="3" Content="Slut Datum" />
-          <Label Classes="header" Grid.Column="4" Content="Typ Av Kurs" />
+        <Grid ColumnDefinitions="50,200,120,140,140,160,80,100">
+          <Label Classes="header" Content="Id" />
+          <Label Classes="header" Grid.Column="1" Content="Kurs" />
+          <Label Classes="header" Grid.Column="2" Content="Antal Veckor" />
+          <Label Classes="header" Grid.Column="3" Content="Start Datum" />
+          <Label Classes="header" Grid.Column="4" Content="Slut Datum" />
+          <Label Classes="header" Grid.Column="5" Content="Typ Av Kurs" />
+          <Label Classes="header" Grid.Column="6" Content="" />
+          <Label Classes="header" Grid.Column="7" Content="" />
       </Grid>
       </Border>
       <ItemsControl ItemsSource="{Binding Courses}">
         <ItemsControl.ItemTemplate>
           <DataTemplate>
-            <Grid ColumnDefinitions="200,120,140,140,160">
-              <Label Classes="cell title" Content="{Binding Titel}" />
-              <Label Classes="cell" Grid.Column="1" Content="{Binding HowManyWeeks}" />
-              <Label Classes="cell" Grid.Column="2" Content="{Binding StartDate}" />
-              <Label Classes="cell" Grid.Column="3" Content="{Binding EndDate}" />
-              <Label Classes="cell" Grid.Column="4" Content="{Binding TypeOfCourse}" />
+            <Grid ColumnDefinitions="50, 200,120,140,140,160,80,100">
+              <Label Classes="cell title" Content="{Binding ListNumber}" />
+              <Label Classes="cell title" Grid.Column="1" Content="{Binding Titel}" />
+              <Label Classes="cell" Grid.Column="2" Content="{Binding HowManyWeeks}" />
+              <Label Classes="cell" Grid.Column="3" Content="{Binding StartDate}" />
+              <Label Classes="cell" Grid.Column="4" Content="{Binding EndDate}" />
+              <Label Classes="cell" Grid.Column="5" Content="{Binding TypeOfCourse}" />
+              <Button Classes="RowAction" Grid.Column="6" Margin="0 0 8 0" VerticalAlignment="Center" Content="Ändra"
+                      Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).GoToEditCourseCommand}"
+                      CommandParameter="{Binding ListNumber}" />
+              <Button Classes="RowAction danger" Grid.Column="7" VerticalAlignment="Center" Content="Ta bort"
+                      Command="{Binding $parent[UserControl].((vm:CoursesViewModel)DataContext).DeleteCommand}"
+                      CommandParameter="{Binding ListNumber}" />
             </Grid>
           </DataTemplate>
         </ItemsControl.ItemTemplate>
       </ItemsControl>
+
+      <Popup IsOpen="{Binding ShowDialog}" Placement="Center" PlacementTarget="{Binding $parent[Window]}">
+        <Border Padding="30" Background="{DynamicResource MainPanel}" BorderBrush="{DynamicResource MainHover}"
+                BorderThickness="2" CornerRadius="30">
+          <StackPanel Spacing="20">
+            <TextBlock Padding="20 20 20 0" MaxWidth="420" TextWrapping="Wrap" FontSize="24" FontWeight="SemiBold"
+                       Foreground="{DynamicResource MainBackground}"
+                       Text="Är du säker på att du vill ta bort kursen?" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
+              <Button Classes="RowAction danger" Padding="24 8" FontSize="16" Content="Ta bort" Command="{Binding ConfirmCommand}" />
+              <Button Classes="PageSelectButton" Content="Avbryt" Command="{Binding CancelCommand}" />
+            </StackPanel>
+          </StackPanel>
+        </Border>
+      </Popup>
 
     </StackPanel>
 </UserControl>

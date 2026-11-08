@@ -52,14 +52,20 @@ public partial class CoursesViewModel : ViewModelBase
     private async Task Confirm()
     {
         ShowDialog = false;
-        CourseRestDb course = await _courseService!.Find(_courseId);
-        if (course is not null)
+        try
         {
-            await _courseService!.Delete(course._id);
+            CourseRestDb course = await _courseService!.Find(_courseId);
+            await _courseService.Delete(course._id);
             await LoadCourses();
         }
-
-        _mainWindowViewModel!.IsBusy = false;
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        finally
+        {
+            _mainWindowViewModel!.IsBusy = false;
+        }
     }
 
     [RelayCommand]

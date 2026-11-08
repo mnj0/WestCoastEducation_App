@@ -9,7 +9,7 @@ public interface ICourseService
 {
     Task Add(Course course);
     Task Delete(string id);
-    Task<CourseRestDb> Find(string itemNumber);
+    Task<CourseRestDb> Find(string listNumber);
     Task<List<Course>> List();
     Task Update(Course course, string _objectId);
 }

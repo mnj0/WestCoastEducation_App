@@ -9,6 +9,7 @@
   <Color x:Key="MainHoverColor">#C1A0AC</Color> 
   <Color x:Key="MainAccentColor">#806C79</Color>
   <Color x:Key="MainTextColor">#16131F</Color>
+  <Color x:Key="MainDangerColor">#E5646E</Color>
 
 
   <SolidColorBrush x:Key="MainText" Color="{StaticResource MainTextColor}" />
@@ -18,4 +19,5 @@
   <SolidColorBrush x:Key="MainPanel" Color="{StaticResource MainPanelColor}" />
   <SolidColorBrush x:Key="MainHover" Color="{StaticResource MainHoverColor}" />
   <SolidColorBrush x:Key="MainAccent" Color="{StaticResource MainAccentColor}" />
+  <SolidColorBrush x:Key="MainDanger" Color="{StaticResource MainDangerColor}" />
 </ResourceDictionary>

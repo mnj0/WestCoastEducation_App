@@ -38,4 +38,41 @@
     <Setter Property="Background" Value="{DynamicResource MainAccent}" />
     <Setter Property="Foreground" Value="{DynamicResource MainWindowBackground}" />
   </Style>
+
+  <Style Selector="Button.RowAction">
+    <Setter Property="FontSize" Value="13" />
+    <Setter Property="Foreground" Value="{DynamicResource MainBackground}" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="{DynamicResource MainAccent}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="CornerRadius" Value="50" />
+    <Setter Property="Padding" Value="12,4" />
+  </Style>
+
+  <Style Selector="Button.RowAction:pointerover /template/ ContentPresenter">
+    <Setter Property="Background" Value="{DynamicResource MainPanel}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource MainHover}" />
+    <Setter Property="Foreground" Value="{DynamicResource MainBackground}" />
+  </Style>
+
+  <Style Selector="Button.RowAction:pressed /template/ ContentPresenter">
+    <Setter Property="Background" Value="{DynamicResource MainAccent}" />
+    <Setter Property="Foreground" Value="{DynamicResource MainBackground}" />
+  </Style>
+
+  <Style Selector="Button.danger">
+    <Setter Property="Foreground" Value="{DynamicResource MainDanger}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource MainDanger}" />
+  </Style>
+
+  <Style Selector="Button.danger:pointerover /template/ ContentPresenter">
+    <Setter Property="Background" Value="{DynamicResource MainDanger}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource MainDanger}" />
+    <Setter Property="Foreground" Value="{DynamicResource MainWindowBackground}" />
+  </Style>
+
+  <Style Selector="Button.danger:pressed /template/ ContentPresenter">
+    <Setter Property="Background" Value="{DynamicResource MainDanger}" />
+    <Setter Property="Foreground" Value="{DynamicResource MainWindowBackground}" />
+  </Style>
 </Styles>

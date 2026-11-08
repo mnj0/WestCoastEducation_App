@@ -19,10 +19,10 @@ public class CourseService : ICourseService
         var httpService = new HttpService<Course>();
         await httpService.Delete("courses", id);
     }
-    public async Task<CourseRestDb> Find(string itemNumber)
+    public async Task<CourseRestDb> Find(string listNumber)
     {
         var httpService = new HttpService<CourseRestDb>();
-        var searchCriteria = "{\"itemNumber\":" + "\"" + itemNumber + "\"}";
+        var searchCriteria = "{\"listNumber\":" + "\"" + listNumber + "\"}";
         return await httpService.Get("courses", searchCriteria);
     }
     public async Task<List<Course>> List()
