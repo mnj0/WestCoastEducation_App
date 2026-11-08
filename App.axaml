@@ -22,5 +22,6 @@
         <StyleInclude Source="/Assets/Styles/Buttons.axaml" />
         <StyleInclude Source="/Assets/Styles/Labels.axaml" />
         <StyleInclude Source="/Assets/Styles/TextBlocks.axaml" />
+        <StyleInclude Source="/Assets/Styles/TextBoxes.axaml" />
     </Application.Styles>
 </Application>

@@ -1,0 +1,45 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Styles.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="/Assets/Resources/Color.axaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Styles.Resources>
+
+  <Design.PreviewWith>
+    <Border Background="{DynamicResource MainWindowBackground}" Padding="20">
+      <StackPanel Spacing="10">
+        <TextBox Classes="form" Text="C# Grund" />
+        <TextBox Classes="form" PlaceholderText="ÅÅÅÅ-MM-DD" />
+      </StackPanel>
+    </Border>
+  </Design.PreviewWith>
+
+  <!-- Text input: dark panel, pale pink text, border lights up on hover and focus -->
+  <Style Selector="TextBox.form">
+    <!-- Fluent reads these keys for its hover/focus states, so overriding them keeps the theme in every state -->
+    <Style.Resources>
+      <StaticResource x:Key="TextControlBackground" ResourceKey="MainPanel" />
+      <StaticResource x:Key="TextControlBackgroundPointerOver" ResourceKey="MainPanel" />
+      <StaticResource x:Key="TextControlBackgroundFocused" ResourceKey="MainPanel" />
+      <StaticResource x:Key="TextControlForeground" ResourceKey="MainBackground" />
+      <StaticResource x:Key="TextControlForegroundPointerOver" ResourceKey="MainBackground" />
+      <StaticResource x:Key="TextControlForegroundFocused" ResourceKey="MainBackground" />
+      <StaticResource x:Key="TextControlBorderBrush" ResourceKey="MainAccent" />
+      <StaticResource x:Key="TextControlBorderBrushPointerOver" ResourceKey="MainHover" />
+      <StaticResource x:Key="TextControlBorderBrushFocused" ResourceKey="MainBackground" />
+      <StaticResource x:Key="TextControlPlaceholderForeground" ResourceKey="MainHover" />
+      <StaticResource x:Key="TextControlPlaceholderForegroundPointerOver" ResourceKey="MainHover" />
+      <StaticResource x:Key="TextControlPlaceholderForegroundFocused" ResourceKey="MainHover" />
+      <x:Double x:Key="TextControlPlaceholderOpacity">1</x:Double>
+    </Style.Resources>
+    <Setter Property="Width" Value="320" />
+    <Setter Property="FontSize" Value="15" />
+    <Setter Property="Padding" Value="16,8" />
+    <Setter Property="CornerRadius" Value="20" />
+    <Setter Property="PlaceholderForeground" Value="{DynamicResource MainHover}" />
+  </Style>
+</Styles>

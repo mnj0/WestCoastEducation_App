@@ -15,6 +15,7 @@
     <AvaloniaXaml Remove="Assets\Styles\Buttons.axaml" />
     <AvaloniaXaml Remove="Assets\Styles\Labels.axaml" />
     <AvaloniaXaml Remove="Assets\Styles\TextBlocks.axaml" />
+    <AvaloniaXaml Remove="Assets\Styles\TextBoxes.axaml" />
   </ItemGroup>
 
   <ItemGroup>

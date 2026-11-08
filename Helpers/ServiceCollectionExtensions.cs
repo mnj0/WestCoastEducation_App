@@ -17,11 +17,13 @@ public static class ServiceCollectionExtensions
         collection.AddSingleton<ICourseService, CourseService>();
         collection.AddTransient<HomeViewModel>();
         collection.AddTransient<CoursesViewModel>();
+        collection.AddTransient<AddCourseViewModel>();
         
         collection.AddSingleton<Func<PageViewEnum, ViewModelBase>>(c => name => name switch
         {
             PageViewEnum.Home => c.GetRequiredService<HomeViewModel>(),
             PageViewEnum.Courses => c.GetRequiredService<CoursesViewModel>(),
+            PageViewEnum.AddCourse => c.GetRequiredService<AddCourseViewModel>(),
             _ => throw new InvalidOperationException()
         });
     }

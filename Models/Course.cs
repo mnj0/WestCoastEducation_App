@@ -10,6 +10,7 @@ namespace WestCoastEducation_App.Models;
 public record Course
 {
     public string Id {get; set; } = Guid.NewGuid().ToString();
+    public required string ListNumber { get; set; }
     public required string Titel {get; set;}
 
     //Antal veckor i längd
