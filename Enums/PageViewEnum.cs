@@ -6,6 +6,6 @@ public enum PageViewEnum
     Courses,
     AddCourse,
     EditCourse,
-    Studens,
+    Students,
     Teachers
 }

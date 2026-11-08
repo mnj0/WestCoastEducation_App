@@ -22,8 +22,8 @@
                               HorizontalAlignment="Center" VerticalAlignment="Center">
                       <Button Classes="PageSelectButton" Content="Home" Command="{Binding GoToHomeCommand}" />
                       <Button Classes="PageSelectButton" Content="Courses" Command="{Binding GoToCoursesCommand}"/>
-                      <Button Classes="PageSelectButton" Content="Students" />
-                      <Button Classes="PageSelectButton" Content="Teachers" />
+                      <Button Classes="PageSelectButton" Content="Students" Command="{Binding GoToStudentsCommand}" />
+                      <Button Classes="PageSelectButton" Content="Teachers" Command="{Binding GoToTeachersCommand}" />
                   </StackPanel>
               </Grid>
           </Border>
